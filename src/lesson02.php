@@ -21,18 +21,27 @@ function has($list, $value): bool
 
 function reverse($list)
 {
-    // if (isEmpty($list)) {
-    //     throw new Exception('Передан пустой список!');
-    // }
+    if (isEmpty($list)) {
+        return l();
+    }
 
-//     $iter = function ($list) {
-//         return isEmpty($list) ? $list : l(head($list));
-//     };
+    $iter = function ($reversed, $lst) use (&$iter) {
+        if (isEmpty($lst)) {
+            return $reversed;
+        }
 
-//     $tail = tail($list);
+        $head = head($lst);
+        $tail = tail($lst);
+        $newList = cons($head, $reversed);
 
+        return $iter($newList, $tail);
+    };
 
-//     return cons($iter($tail), head($list));
+    $end = head($list);
+    $tail = tail($list);
+    $reversed = l($end);
+
+    return $iter($reversed, $tail);
 }
 
 function concat($list1, $list2)
