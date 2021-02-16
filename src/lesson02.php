@@ -46,6 +46,10 @@ function reverse($list)
 
 function concat($list1, $list2)
 {
-    return null;
+    \print_r(PHP_EOL . "-=START=-" . PHP_EOL);
+    $newLst = trim(listToString($list1), '()') . ', ' . trim(listToString($list2), '()');
+    \print_r($newLst);
+    \print_r(PHP_EOL . "-==END==-" . PHP_EOL);
+    return '(' . trim($newLst, ', ') . ')';
 }
 // END
