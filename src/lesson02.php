@@ -54,8 +54,9 @@ function concat($list1, $list2)
     }
 /* Так тоже работает
     $coll1 = explode(', ', trim(listToString($list1), '()'));
+    $arr = array_reverse($coll1);
 */
-
+/* Это PHP!!! Забудь про иммутабельность :)
     $head = head($list1);
     $tail = tail($list1);
     $coll1[] = $head;
@@ -64,19 +65,31 @@ function concat($list1, $list2)
         $tail = tail($tail);
         $coll1[] = $head;
     }
-    $arr1 = array_reverse($coll1);
+    $arr = array_reverse($coll1);
+ */
+
+    $lst1 = function ($list, $acc = []) use (&$lst1) {
+        $first = head($list);
+        $rest = tail($list);
+        $acc[] += $first;
+        if (isEmpty($rest)) {
+            return $acc;
+        }
+        return $lst1($rest, $acc);
+    };
+    $arr = array_reverse($lst1($list1));
 
     $result = array_reduce(
-        $arr1,
+        $arr,
         fn($acc, $item) => cons($item, $acc),
         $acc = $list2
     );
 
     return $result;
 
-    /* Шутка, но тесты проходит :-)
+/* Шутка, но тесты проходит :-)
     $newLst = trim(listToString($list1), '()') . ', ' . trim(listToString($list2), '()');
     return '(' . trim($newLst, ', ') . ')';
-    */
+*/
 }
 // END
