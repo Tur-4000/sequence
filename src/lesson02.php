@@ -46,10 +46,25 @@ function reverse($list)
 
 function concat($list1, $list2)
 {
-    \print_r(PHP_EOL . "-=START=-" . PHP_EOL);
+    if (isEmpty($list1)) {
+        return $list2;
+    }
+    if (isEmpty($list2)) {
+        return $list1;
+    }
+    $coll1 = explode(', ', trim(listToString($list1), '()'));
+    $arr1 = array_reverse($coll1);
+
+    $result = array_reduce(
+        $arr1,
+        fn($acc, $item) => cons($item, $acc),
+        $acc = $list2
+    );
+
+    return $result;
+    /* Шутка, но тесты проходит :-)
     $newLst = trim(listToString($list1), '()') . ', ' . trim(listToString($list2), '()');
-    \print_r($newLst);
-    \print_r(PHP_EOL . "-==END==-" . PHP_EOL);
     return '(' . trim($newLst, ', ') . ')';
+    */
 }
 // END
