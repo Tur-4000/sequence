@@ -52,7 +52,18 @@ function concat($list1, $list2)
     if (isEmpty($list2)) {
         return $list1;
     }
+/* Так тоже работает
     $coll1 = explode(', ', trim(listToString($list1), '()'));
+*/
+
+    $head = head($list1);
+    $tail = tail($list1);
+    $coll1[] = $head;
+    while (!isEmpty($tail)) {
+        $head = head($tail);
+        $tail = tail($tail);
+        $coll1[] = $head;
+    }
     $arr1 = array_reverse($coll1);
 
     $result = array_reduce(
@@ -62,6 +73,7 @@ function concat($list1, $list2)
     );
 
     return $result;
+
     /* Шутка, но тесты проходит :-)
     $newLst = trim(listToString($list1), '()') . ', ' . trim(listToString($list2), '()');
     return '(' . trim($newLst, ', ') . ')';
