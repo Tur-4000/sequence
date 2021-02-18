@@ -4,8 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af90913cc6e7adeec8c9d43c30f06f34",
+    "content-hash": "b7ddf3faa2dc624ad431844d24ef40f7",
     "packages": [
+        {
+            "name": "hexlet/html-tags",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hexlet-components/php-html-tags.git",
+                "reference": "61d31915035aba20d9429c491eb200a44183f3bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hexlet-components/php-html-tags/zipball/61d31915035aba20d9429c491eb200a44183f3bc",
+                "reference": "61d31915035aba20d9429c491eb200a44183f3bc",
+                "shasum": ""
+            },
+            "require": {
+                "hexlet/pairs": "dev-master",
+                "hexlet/pairs-data": "dev-master",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/HtmlTags.php"
+                ]
+            },
+            "scripts": {
+                "phpunit": [
+                    "phpunit"
+                ],
+                "phpcs": [
+                    "phpcs"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Ashikov",
+                    "email": "rmn.shkv@gmail.com"
+                }
+            ],
+            "keywords": [
+                "html",
+                "tags"
+            ],
+            "support": {
+                "source": "https://github.com/hexlet-components/php-html-tags/tree/master",
+                "issues": "https://github.com/hexlet-components/php-html-tags/issues"
+            },
+            "time": "2020-06-23T07:08:26+00:00"
+        },
         {
             "name": "hexlet/pairs",
             "version": "dev-master",
@@ -397,12 +453,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "b7cdc51be491bbe41aa0ecbe4471ef6a84c26fe8"
+                "reference": "3dd5d2deb8bbfd0e13c221330d9170689897393e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/b7cdc51be491bbe41aa0ecbe4471ef6a84c26fe8",
-                "reference": "b7cdc51be491bbe41aa0ecbe4471ef6a84c26fe8",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3dd5d2deb8bbfd0e13c221330d9170689897393e",
+                "reference": "3dd5d2deb8bbfd0e13c221330d9170689897393e",
                 "shasum": ""
             },
             "require": {
@@ -417,7 +473,7 @@
                 "sebastian/complexity": "^3.0",
                 "sebastian/environment": "^5.1.2",
                 "sebastian/lines-of-code": "^2.0",
-                "sebastian/version": "^3.0.1",
+                "sebastian/version": "^4.0",
                 "theseer/tokenizer": "^1.2.0"
             },
             "require-dev": {
@@ -462,7 +518,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-02-16T07:18:55+00:00"
+            "time": "2021-02-16T12:55:54+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -695,12 +751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "92648034da2c8356fd41938f32f1662bfa99c02d"
+                "reference": "0a0a8c5328dba8e099dd2bbe8870901f0f08b4f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/92648034da2c8356fd41938f32f1662bfa99c02d",
-                "reference": "92648034da2c8356fd41938f32f1662bfa99c02d",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0a0a8c5328dba8e099dd2bbe8870901f0f08b4f1",
+                "reference": "0a0a8c5328dba8e099dd2bbe8870901f0f08b4f1",
                 "shasum": ""
             },
             "require": {
@@ -730,7 +786,7 @@
                 "sebastian/object-enumerator": "^4.0.3",
                 "sebastian/resource-operations": "^3.0.3",
                 "sebastian/type": "^2.3",
-                "sebastian/version": "^3.0.2"
+                "sebastian/version": "^4.0"
             },
             "require-dev": {
                 "ext-pdo": "*"
@@ -784,7 +840,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-02-16T08:37:27+00:00"
+            "time": "2021-02-16T12:56:14+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -1643,21 +1699,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/version.git",
-                "reference": "c6c1022351a901512170118436c764e473f6de8c"
+                "reference": "c4a4bb93c63e7449e849b1c80a7083fec21dbdc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/c6c1022351a901512170118436c764e473f6de8c",
-                "reference": "c6c1022351a901512170118436c764e473f6de8c",
+                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/c4a4bb93c63e7449e849b1c80a7083fec21dbdc7",
+                "reference": "c4a4bb93c63e7449e849b1c80a7083fec21dbdc7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.3"
+                "php": ">=7.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -1684,7 +1740,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-28T06:39:44+00:00"
+            "time": "2021-02-16T12:52:59+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1789,6 +1845,7 @@
     "stability-flags": {
         "hexlet/pairs": 20,
         "hexlet/pairs-data": 20,
+        "hexlet/html-tags": 20,
         "phpunit/phpunit": 20,
         "squizlabs/php_codesniffer": 20
     },
