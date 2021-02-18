@@ -17,6 +17,17 @@ function has($list, $value): bool
     }
 
     return (head($list) === $value) ? true : has(tail($list), $value);
+
+/* решение учителя
+    if (isEmpty($list)) {
+        return false;
+    }
+    if (head($list) === $element) {
+        return true;
+    }
+
+    return has(tail($list), $element);
+*/
 }
 
 function reverse($list)
@@ -42,6 +53,14 @@ function reverse($list)
     $reversed = l($end);
 
     return $iter($reversed, $tail);
+
+/* решение учителя
+    $iter = function ($items, $acc) use (&$iter) {
+        return isEmpty($items) ? $acc : $iter(tail($items), cons(head($items), $acc));
+    };
+
+    return $iter($list, l());
+*/
 }
 
 function concat($list1, $list2)
@@ -90,6 +109,14 @@ function concat($list1, $list2)
 /* Шутка, но тесты проходит :-)
     $newLst = trim(listToString($list1), '()') . ', ' . trim(listToString($list2), '()');
     return '(' . trim($newLst, ', ') . ')';
+*/
+
+/* решение учителя
+    if (isEmpty($list1)) {
+        return $list2;
+    }
+
+    return cons(head($list1), concat(tail($list1), $list2));
 */
 }
 // END
