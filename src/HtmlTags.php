@@ -1,6 +1,9 @@
 <?php
 
-/* lesson 3 */
+/**
+ * lesson 3 -- HtmlTags
+ */
+
 namespace App\HtmlTags;
 
 use function Php\Pairs\Pairs\cons;
@@ -19,28 +22,59 @@ function make()
     return l();
 }
 // BEGIN (write your solution here)
-function node($name, $value)
+function node(string $tagName, $body)
 {
-    return null;
+    return cons($tagName, $body);
 }
 
-function getName($node)
+function getName($node): string
 {
-    return null;
+    return car($node);
 }
 
 function getValue($node)
 {
-    return null;
+    return cdr($node);
 }
 
 function append($dom, $node)
 {
-    return $dom;
+    return cons($node, $dom);
+/* решение учителя
+    return consList($element, $dom);
+*/
 }
 
-function toString($dom)
+function toString($dom): string
 {
-    return $dom;
+    if (isEmpty($dom)) {
+        return '';
+    }
+
+    $iter = function ($dom, $html = '') use (&$iter) {
+        if (isEmpty($dom)) {
+            return $html;
+        }
+        $node = head($dom);
+        $rest = tail($dom);
+        $tag = getName($node);
+        $body = getValue($node);
+        $newHtml = "<{$tag}>{$body}</{$tag}>{$html}";
+        return $iter($rest, $newHtml);
+    };
+
+    return $iter($dom);
+/* решение учителя
+    if (isEmpty($html)) {
+        return '';
+    }
+
+    $element = head($html);
+    $tag = getName($element);
+    $value = getValue($element);
+    $restOfHtml = toString(tail($html));
+
+    return "{$restOfHtml}<{$tag}>{$value}</{$tag}>";
+*/
 }
 // END
