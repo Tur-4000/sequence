@@ -14,7 +14,7 @@ use function Php\Html\Tags\HtmlTags\node;
 use function Php\Html\Tags\HtmlTags\is;
 
 // BEGIN (write your solution here)
-function map($dom, $func)
+function map($dom, callable $func)
 {
     if (isEmpty($dom)) {
         return l();
