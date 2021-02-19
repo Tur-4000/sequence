@@ -13,7 +13,8 @@
         "files": [
             "src/lesson02.php",
             "src/HtmlTags.php",
-            "src/HtmlTags2.php"
+            "src/HtmlTags2.php",
+            "src/HtmlTags3.php"
         ]
     },
     "repositories": [{
