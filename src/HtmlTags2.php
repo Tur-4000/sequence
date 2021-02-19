@@ -14,8 +14,16 @@ use function Php\Html\Tags\HtmlTags\node;
 use function Php\Html\Tags\HtmlTags\is;
 
 // BEGIN (write your solution here)
-function map()
-{}
+function map($dom, $func)
+{
+    if (isEmpty($dom)) {
+        return l();
+    }
+
+    $newNode = $func(head($dom));
+
+    return cons($newNode, map(tail($dom), $func));
+}
 
 function mirror()
 {}
