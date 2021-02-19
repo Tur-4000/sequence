@@ -23,10 +23,32 @@ function map($dom, callable $func)
     $newNode = $func(head($dom));
 
     return cons($newNode, map(tail($dom), $func));
+/*
+ * решение учителя
+ * Итеративный процесс (рекурсивно)
+function map($elements, callable $func)
+{
+    $iter = function ($items, $acc) use (&$iter, $func) {
+        if (isEmpty($items)) {
+            return reverse($acc);
+        }
+
+        return $iter(tail($items), cons($func(head($items)), $acc));
+    };
+
+    return $iter($elements, l());
+}
+*/
 }
 
-function mirror()
-{}
+function mirror($dom)
+{
+    return map($dom, function ($node) {
+        $body = getValue($node);
+        $mirroredBody = strrev($body);
+        return node(getName($node), $mirroredBody);
+    });
+}
 // END
 
 function b2p($elements)
