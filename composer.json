@@ -14,7 +14,8 @@
             "src/lesson02.php",
             "src/HtmlTags.php",
             "src/HtmlTags2.php",
-            "src/HtmlTags3.php"
+            "src/HtmlTags3.php",
+            "src/HtmlTags4.php"
         ]
     },
     "repositories": [{
