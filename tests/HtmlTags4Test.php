@@ -13,7 +13,7 @@ use function App\HtmlTags\reduce;
 use function App\HtmlTags\headersCount;
 use function App\HtmlTags\emptyTagsCount;
 
-class HtmlTagsTest extends TestCase
+class HtmlTags4Test extends TestCase
 {
     protected function setUp(): void
     {
