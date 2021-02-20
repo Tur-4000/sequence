@@ -1,6 +1,9 @@
 install:
 	composer install
 
+autoload:
+	composer dump-autoload
+
 test:
 	composer run-script phpunit -- --colors=always tests
 
