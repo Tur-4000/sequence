@@ -20,6 +20,17 @@ use function Php\Html\Tags\HtmlTags\toString as htmlToString;
 // BEGIN (write your solution here)
 function select(string $tagName, $html)
 {
-    return null;
+    return reduce($html, function ($node, $acc) use ($tagName) {
+        \var_dump($node);
+
+        if (is($tagName, $node)) {
+            return concat($acc, $node);
+        }
+        if (hasChildren($node)) {
+            return select($tagName, children($node));
+        } else {
+            return select($tagName, $node);
+        }
+    }, l());
 }
 // END
