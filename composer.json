@@ -16,7 +16,8 @@
             "src/HtmlTags2.php",
             "src/HtmlTags3.php",
             "src/HtmlTags4.php",
-            "src/HtmlTags7.php"
+            "src/HtmlTags7.php",
+            "src/Select.php"
         ]
     },
     "repositories": [{
