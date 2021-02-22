@@ -31,5 +31,13 @@ function select(string $tagName, $html)
                                   concat($acc, select($tagName, children($node)));
         }
     }, l());
+
+/*
+ * решение учителя
+return reduce($html, function ($element, $acc) use ($tagName) {
+        $acc2 = hasChildren($element) ? concat(select($tagName, children($element)), $acc) : $acc;
+        return is($tagName, $element) ? consList($element, $acc2) : $acc2;
+    }, l());
+*/
 }
 // END
