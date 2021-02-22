@@ -21,15 +21,14 @@ use function Php\Html\Tags\HtmlTags\toString as htmlToString;
 function select(string $tagName, $html)
 {
     return reduce($html, function ($node, $acc) use ($tagName) {
-        \var_dump($node);
-
         if (is($tagName, $node)) {
-            return concat($acc, $node);
-        }
-        if (hasChildren($node)) {
-            return select($tagName, children($node));
+            return !hasChildren($node) ?
+                concat($acc, l($node)) :
+                concat(concat($acc, l($node)), select($tagName, children($node)));
         } else {
-            return select($tagName, $node);
+            return !hasChildren($node) ?
+                                  $acc :
+                                  concat($acc, select($tagName, children($node)));
         }
     }, l());
 }
